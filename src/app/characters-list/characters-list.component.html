@@ -1,0 +1,13 @@
+<div *ngIf="characters.length; else noCharacters">
+    <ul>
+        <li *ngFor="let character of characters">
+            <h2>{{ character.name }}</h2>
+            <p>{{ character.description || 'No description available.' }}</p>
+            <p>Last Modified: {{ character.modified }}</p>
+            <a href="{{ character.resourceURI }}">More Info</a>
+        </li>
+    </ul>
+</div>
+<ng-template #noCharacters>
+    <p>No characters found.</p>
+</ng-template>
